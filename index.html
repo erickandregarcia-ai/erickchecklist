@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkedIn — Plano de Correções | Erick André Garcia</title>
+<style>
+  :root{--bg:#0f1420;--card:#1a2233;--card2:#222c42;--txt:#e8ecf4;--mut:#9aa5bd;--acc:#0a66c2;--acc2:#4fc3f7;--ok:#4caf7d;--warn:#f7981f;--brd:#2c3850}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.55;padding:24px;max-width:980px;margin:0 auto}
+  h1{font-size:1.5rem;margin-bottom:4px}
+  h1 span{color:var(--acc2)}
+  .sub{color:var(--mut);font-size:.9rem;margin-bottom:16px}
+  .prog{background:var(--card2);border:1px solid var(--brd);border-radius:10px;padding:10px 14px;margin-bottom:22px;font-size:.85rem}
+  .prog .bar{height:8px;background:var(--brd);border-radius:99px;margin-top:8px;overflow:hidden}
+  .prog .fill{height:100%;width:0%;background:linear-gradient(90deg,var(--acc),var(--ok));transition:width .3s}
+  .sec{background:var(--card);border:1px solid var(--brd);border-radius:12px;padding:18px 20px;margin-bottom:16px}
+  .sec.alta{border-left:4px solid var(--warn)}
+  .shead{display:flex;justify-content:space-between;align-items:center;cursor:pointer;user-select:none}
+  .shead h2{font-size:1.05rem}
+  .cnt{font-size:.75rem;color:var(--mut);white-space:nowrap;margin-left:10px}
+  .sbody{margin-top:14px}
+  .sec.closed .sbody{display:none}
+  .task{display:flex;gap:10px;align-items:flex-start;padding:6px 0;font-size:.9rem;cursor:pointer;border-bottom:1px solid #222c42}
+  .task:last-child{border-bottom:none}
+  .task input{margin-top:4px;accent-color:var(--ok);cursor:pointer;flex-shrink:0}
+  .task.done span{color:var(--mut);text-decoration:line-through}
+  .task b{color:var(--txt)}
+  .fix{color:var(--warn)}
+  .arr{color:var(--ok)}
+  .sublist{margin:4px 0 4px 26px;font-size:.85rem}
+  .post{background:var(--card2);border:1px solid var(--brd);border-radius:10px;padding:14px 16px;margin:10px 0;font-size:.88rem;white-space:pre-wrap;color:#cdd5e5}
+  .post h4{color:var(--acc2);font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+  .copy{background:var(--acc);color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.8rem;cursor:pointer;margin-top:10px}
+  .copy:hover{filter:brightness(1.15)}
+  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:8px}
+  .metric{background:var(--card2);border:1px solid var(--brd);border-radius:10px;padding:12px;text-align:center}
+  .metric .v{font-size:1.4rem;font-weight:700;color:var(--acc2)}
+  .metric .l{font-size:.72rem;color:var(--mut);margin-top:4px}
+  a{color:var(--acc2)}
+  .meta{margin:8px 0 0;font-size:.85rem;color:var(--mut)}
+  .meta b{color:var(--txt)}
+  footer{margin-top:24px;font-size:.8rem;color:var(--mut);text-align:center}
+</style>
+</head>
+<body>
+<h1>LinkedIn — Plano de Correções <span>| Erick André Garcia</span></h1>
+<p class="sub">Checklist interativo · progresso salvo neste navegador · baseline nov/2026</p>
+
+<div class="prog">Progresso geral: <b id="pct">0%</b> concluído (<span id="done">0</span>/<span id="tot">0</span>)
+  <div class="bar"><div class="fill" id="fill"></div></div>
+</div>
+
+<!-- SEÇÃO 1 -->
+<div class="sec alta">
+  <div class="shead"><h2>1 · Erros visíveis <span class="fix">— prioridade alta</span></h2><span class="cnt" data-cnt></span></div>
+  <div class="sbody">
+    <label class="task"><input type="checkbox" data-k="s1a"><span>Competências: <b>"Governaça de Ia"</b> <span class="arr">→</span> "Governança de IA"</span></label>
+    <label class="task"><input type="checkbox" data-k="s1b"><span>Experiência (Gerente de operações financeiras): <b>"panejamento estrategico"</b> <span class="arr">→</span> "planejamento estratégico"</span></label>
+    <label class="task"><input type="checkbox" data-k="s1c"><span>Mesma experiência: <b>"competências combinadas"</b> — verificar se era "competências comportamentais"</span></label>
+    <label class="task"><input type="checkbox" data-k="s1d"><span>Padronizar <b>"Intercambio"</b> <span class="arr">→</span> "Intercâmbio" em todo o perfil</span></label>
+    <label class="task"><input type="checkbox" data-k="s1e"><span>Post automático <b>"estou estudando para me tornar Governança de IA"</b> <span class="arr">→</span> editar ou substituir por texto próprio (sugestão: Post 1, seção 7)</span></label>
+  </div>
+</div>
+
+<!-- SEÇÃO 2 -->
+<div class="sec">
+  <div class="shead"><h2>2 · Inconsistências de dados</h2><span class="cnt" data-cnt></span></div>
+  <div class="sbody">
+    <label class="task"><input type="checkbox" data-k="s2a"><span><b>Mackenzie:</b> perfil mostra 1996–1999, documento diz conclusão em 2022 <span class="arr">→</span> confirmar diploma e corrigir</span></label>
+    <label class="task"><input type="checkbox" data-k="s2b"><span><b>Fundação Studyntravel:</b> confirmar 17 de junho de 1996 (página corporativa mostrava julho)</span></label>
+    <label class="task"><input type="checkbox" data-k="s2c"><span><b>Senac Turismo:</b> só manter como formação concluída se houver comprovação</span></label>
+    <label class="task"><input type="checkbox" data-k="s2d"><span><b>Marketing na Austrália:</b> preencher instituição, período e modalidade</span></label>
+    <label class="task"><input type="checkbox" data-k="s2e"><span><b>Credencial ICEF:</b> verificar validade (expirava set/2026) <span class="arr">→</span> renovar ou remover</span></label>
+  </div>
+</div>
+
+<!-- SEÇÃO 3 -->
+<div class="sec">
+  <div class="shead"><h2>3 · Identidade visual</h2><span class="cnt" data-cnt></span></div>
+  <div class="sbody">
+    <label class="task"><input type="checkbox" data-k="s3a"><span><b>Foto de perfil:</b> profissional, fundo neutro, rosto ~60% do quadro, mín. 400×400px</span></label>
+    <label class="task"><input type="checkbox" data-k="s3b"><span><b>Capa 1584×396px:</b> tema educação internacional + tecnologia · texto sugerido: <i>"Educação Internacional • IA aplicada à Educação e ao Turismo"</i></span></label>
+    <label class="task"><input type="checkbox" data-k="s3c"><span><b>Setor:</b> trocar "Planejamento, assessoramento e organização de viagens" <span class="arr">→</span> "Administração educacional" ou "Educação"</span></label>
+    <label class="task"><input type="checkbox" data-k="s3d"><span><b>Botão personalizado (Premium):</b> "Educação + IA" <span class="arr">→</span> <a href="https://intercambio.ia.br/" target="_blank">intercambio.ia.br</a></span></label>
+  </div>
+</div>
+
+<!-- SEÇÃO 4 -->
+<div class="sec">
+  <div class="shead"><h2>4 · Competências <span class="fix">(limite de 100 atingido)</span></h2><span class="cnt" data-cnt></span></div>
+  <div class="sbody">
+    <label class="task"><input type="checkbox" data-k="s4a"><span>Remover skills <b>duplicadas, genéricas ou com erro de digitação</b></span></label>
+    <label class="task"><input type="checkbox" data-k="s4b"><span>Fixar <b>3 principais</b> no topo: Educação Internacional · Inteligência Artificial · Gestão de Negócios</span></label>
+    <label class="task"><input type="checkbox" data-k="s4c"><span>Pedir <b>validações a 5–10 conexões</b> e <b>2–3 recomendações escritas</b> (atualmente 0 recebidas)</span></label>
+    <p class="meta"><b>Garantir presença das skills-chave</b> (marque as já adicionadas):</p>
+    <div class="sublist">
+      <label class="task"><input type="checkbox" data-k="sk1"><span>Educação Internacional</span></label>
+      <label class="task"><input type="checkbox" data-k="sk2"><span>Intercâmbio Cultural</span></label>
+      <label class="task"><input type="checkbox" data-k="sk3"><span>Gestão de Negócios</span></label>
+      <label class="task"><input type="checkbox" data-k="sk4"><span>Negociação Internacional</span></label>
+      <label class="task"><input type="checkbox" data-k="sk5"><span>Vendas Consultivas</span></label>
+      <label class="task"><input type="checkbox" data-k="sk6"><span>Inteligência Artificial</span></label>
+      <label class="task"><input type="checkbox" data-k="sk7"><span>Computação em Nuvem</span></label>
+      <label class="task"><input type="checkbox" data-k="sk8"><span>AWS</span></label>
+      <label class="task"><input type="checkbox" data-k="sk9"><span>Governança de IA</span></label>
+      <label class="task"><input type="checkbox" data-k="sk10"><span>Transformação Digital</span></label>
+      <label class="task"><input type="checkbox" data-k="sk11"><span>IA Generativa</span></label>
+      <label class="task"><input type="checkbox" data-k="sk12"><span>Marketing Digital</span></label>
+      <label class="task"><input type="checkbox" data-k="sk13"><span>Comunicação Intercultural</span></label>
+      <label class="task"><input type="checkbox" data-k="sk14"><span>Empreendedorismo</span></label>
+      <label class="task"><input type="checkbox" data-k="sk15"><span>Liderança</span></label>
+    </div>
+  </div>
+</div>
+
+<!-- SEÇÃO 5 -->
+<div class="sec">
+  <div class="shead"><h2>5 · Formações e certificados pendentes</h2><span class="cnt" data-cnt></span></div>
+  <div class="sbody">
+    <label class="task"><input type="checkbox" data-k="s5a"><span><b>Future Law</b> — "Governança de IA: Liderança Jurídica na Era da Regulação": cadastrar certificado ao concluir</span></label>
+    <label class="task"><input type="checkbox" data-k="s5b"><span><b>Escola da Nuvem</b> (AWS re/Start): cadastrar certificado ao concluir (abr/2027)</span></label>
+    <label class="task"><input type="checkbox" data-k="s5c"><span><b>UNED</b> — Gestão de Projetos de Cooperação Internacional: confirmar conclusão</span></label>
+    <label class="task"><input type="checkbox" data-k="s5d"><span><b>Oxford/UNESCO Canvas:</b> confirmar status</span></label>
+    <label class="task"><input type="checkbox" data-k="s5e"><span><b>AWS Certification:</b> cadastrar se fizer exame oficial</span></label>
+  </div>
+</div>
+
+<!-- SEÇÃO 6 -->
+<div class="sec">
+  <div class="shead"><h2>6 · Projetos a cadastrar</h2><span class="cnt" data-cnt></span></div>
+  <div class="sbody">
+    <label class="task"><input type="checkbox" data-k="s6a"><span><b>Hackathon Solana — MVP LASTRO</b> (Colosseum): MVP de verificação de competências de aprendizagem · equipe de 4 · papel: negócios, validação comercial e pitch · <a href="https://colosseum.com/arena/projects/lastro-1" target="_blank">projeto</a> · <a href="https://lastro-learn.vercel.app/" target="_blank">demo</a></span></label>
+    <label class="task"><input type="checkbox" data-k="s6b"><span><b>Lab AWS</b> — Introdução ao Amazon EC2 (Escola da Nuvem)</span></label>
+    <label class="task"><input type="checkbox" data-k="s6c"><span><b>Lab AWS</b> — Endereços IP Públicos e Privados (Escola da Nuvem)</span></label>
+    <label class="task"><input type="checkbox" data-k="s6d"><span><b>Intercâmbio IA</b> e <b>DESTi</b> — cadastrar com links próprios</span></label>
+  </div>
+</div>
+
+<!-- SEÇÃO 7 -->
+<div class="sec">
+  <div class="shead"><h2>7 · Rotina de publicações</h2><span class="cnt" data-cnt></span></div>
+  <div class="sbody">
+    <p class="meta"><b>Meta:</b> 1 post/semana + 3–5 comentários/semana na rede. Textos prontos abaixo — copie e publique.</p>
+
+    <div class="post" id="post1"><h4>Post 1 — Future Law</h4>Comecei a formação em Governança de IA: Liderança Jurídica na Era da Regulação, na Future Law. O programa cobre o que está moldando o uso real da inteligência artificial no Brasil e no mundo: PL 2338/2023 e o papel da ANPD, LGPD e decisões automatizadas, EU AI Act, NIST AI RMF, ISO/IEC 42001 e avaliação de impacto algorítmico.
+
+Depois de 30 anos em educação internacional, vejo a governança de IA como peça central: tecnologia aplicada a educação e turismo só gera valor com responsabilidade, transparência e supervisão humana.
+
+#GovernançaDeIA #InteligênciaArtificial #LGPD #EducaçãoInternacional #AprendizagemContínua<button class="copy" data-t="post1">Copiar texto</button></div>
+
+    <div class="post" id="post2"><h4>Post 2 — Escola da Nuvem</h4>Em formação na Escola da Nuvem: fundamentos de computação em nuvem com foco em AWS. Nos laboratórios práticos, provisionamento de instâncias Amazon EC2, endereços IP públicos e privados e Linux — a base de infraestrutura que sustenta as ferramentas de IA que uso nos negócios.
+
+Não é mudança de carreira: é adicionar competência técnica a 30 anos de experiência em educação internacional.
+
+#AWS #CloudComputing #EscolaDaNuvem #EducaçãoInternacional #TransformaçãoDigital<button class="copy" data-t="post2">Copiar texto</button></div>
+
+    <div class="post" id="post3"><h4>Post 3 — Posicionamento</h4>30 anos organizando intercâmbios me ensinaram uma coisa: a decisão de estudar fora é das mais complexas que uma família enfrenta — destino, escola, visto, custo, perfil do estudante.
+
+Hoje, com IA generativa e automação, consigo fazer em minutos análises que levavam dias. Mas a decisão final continua humana — e deve continuar.
+
+É essa a combinação que estou construindo: experiência de quem vive o setor desde 1996 + ferramentas que estão redefinindo o mercado.
+
+#EducaçãoInternacional #IntercâmbioCultural #InteligênciaArtificial #Inovação<button class="copy" data-t="post3">Copiar texto</button></div>
+
+    <label class="task"><input type="checkbox" data-k="s7a"><span>Publicar <b>Post 1</b> (Future Law)</span></label>
+    <label class="task"><input type="checkbox" data-k="s7b"><span>Publicar <b>Post 2</b> (Escola da Nuvem)</span></label>
+    <label class="task"><input type="checkbox" data-k="s7c"><span>Publicar <b>Post 3</b> (posicionamento)</span></label>
+    <label class="task"><input type="checkbox" data-k="s7d"><span>Estabelecer rotina: <b>1 post/semana + 3–5 comentários/semana</b></span></label>
+  </div>
+</div>
+
+<!-- SEÇÃO 8 -->
+<div class="sec">
+  <div class="shead"><h2>8 · Métricas — baseline nov/2026</h2><span class="cnt" data-cnt></span></div>
+  <div class="sbody">
+    <div class="metrics">
+      <div class="metric"><div class="v">504</div><div class="l">visualizações de perfil</div></div>
+      <div class="metric"><div class="v">1.033</div><div class="l">impressões</div></div>
+      <div class="metric"><div class="v">38</div><div class="l">pesquisas/semana</div></div>
+      <div class="metric"><div class="v">5.262</div><div class="l">seguidores</div></div>
+    </div>
+    <label class="task" style="margin-top:10px"><input type="checkbox" data-k="s8a"><span>Revisar métricas <b>mensalmente</b> e registrar evolução (próxima revisão: dez/2026)</span></label>
+  </div>
+</div>
+
+<footer>Plano de correções do perfil LinkedIn · Erick André Garcia · gerado nov/2026</footer>
+
+<script>
+  // abrir/fechar seções
+  document.querySelectorAll('.shead').forEach(h=>h.addEventListener('click',()=>h.parentElement.classList.toggle('closed')));
+  // checkboxes + localStorage + contadores
+  const boxes=[...document.querySelectorAll('input[type=checkbox][data-k]')];
+  function refresh(){
+    let done=0;
+    document.querySelectorAll('.sec').forEach(sec=>{
+      const b=[...sec.querySelectorAll('input[type=checkbox]')];
+      const d=b.filter(x=>x.checked).length;
+      const c=sec.querySelector('[data-cnt]');
+      if(c)c.textContent=d+'/'+b.length;
+    });
+    boxes.forEach(cb=>{if(cb.checked)done++;cb.closest('.task').classList.toggle('done',cb.checked);});
+    const t=boxes.length,p=t?Math.round(done/t*100):0;
+    document.getElementById('pct').textContent=p+'%';
+    document.getElementById('done').textContent=done;
+    document.getElementById('tot').textContent=t;
+    document.getElementById('fill').style.width=p+'%';
+  }
+  boxes.forEach(cb=>{
+    const k='erickchecklist-'+cb.dataset.k;
+    cb.checked=localStorage.getItem(k)==='1';
+    cb.addEventListener('change',()=>{localStorage.setItem(k,cb.checked?'1':'0');refresh();});
+  });
+  refresh();
+  // botões copiar
+  document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>{
+    const el=document.getElementById(b.dataset.t).cloneNode(true);
+    el.querySelector('h4').remove();el.querySelector('.copy').remove();
+    navigator.clipboard.writeText(el.innerText.trim()).then(()=>{b.textContent='Copiado!';setTimeout(()=>b.textContent='Copiar texto',1500);});
+  }));
+</script>
+</body>
+</html>
